@@ -2,15 +2,7 @@ import os
 from flask import Flask, request, render_template_string
 import google.generativeai as genai
 
-# api_key.txt 파일에서 API 키를 읽어 환경 변수에 설정합니다.
-try:
-    with open("api_key.txt", "r") as f:
-        api_key = f.read().strip()
-    os.environ["GEMINI_API_KEY"] = api_key
-except FileNotFoundError:
-    print("api_key.txt 파일이 없습니다. API 키를 설정해주세요.")
-
-# 환경변수에서 Gemini API 키를 가져와 구성합니다.
+# 환경변수에서 직접 API 키를 가져와 구성합니다.
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 app = Flask(__name__)
