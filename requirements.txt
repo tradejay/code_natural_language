@@ -1,3 +1,4 @@
 # 프로젝트의 Python 의존성을 여기에 나열합니다.
 Flask==3.0.2
 gunicorn==21.2.0
+google-generativeai==0.3.2
