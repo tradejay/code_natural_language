@@ -1,6 +1,10 @@
-import os
-from django.core.wsgi import get_wsgi_application
+from flask import Flask
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'code_natural_language.settings')  # 실제 Django 프로젝트의 settings 모듈 이름으로 변경
+app = Flask(__name__)
 
-application = get_wsgi_application()
+@app.route("/")
+def hello():
+    return "Hello, Render!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
