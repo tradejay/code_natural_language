@@ -1,1 +1,6 @@
 api_key.txt
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
